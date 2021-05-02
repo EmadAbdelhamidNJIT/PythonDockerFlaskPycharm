@@ -18,7 +18,7 @@ mysql.init_app(app)
 
 @app.route('/', methods=['GET'])
 def index():
-    user = {'username': 'Cities Project'}
+    user = {'username': 'Emad Cities Project'}
     cursor = mysql.get_db().cursor()
     cursor.execute('SELECT * FROM tblCitiesImport')
     result = cursor.fetchall()
@@ -77,7 +77,7 @@ def form_delete_post(city_id):
     mysql.get_db().commit()
     return redirect("/", code=302)
 
-
+# API methods #
 @app.route('/api/v1/cities', methods=['GET'])
 def api_browse() -> str:
     cursor = mysql.get_db().cursor()
